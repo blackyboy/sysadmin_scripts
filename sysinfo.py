@@ -17,3 +17,4 @@ print "Gathering diskspace information %s command:\n" % dsk
 subprocess.call([dsk, dsk_arg])
 print "\n"
 subprocess.call("hostname", shell=True)
+subprocess.call("free -m", shell=True)
