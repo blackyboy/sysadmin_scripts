@@ -1,20 +1,21 @@
 #!/usr/bin/env python
 #A System Information Gathering Script
 import subprocess
-#Today's date and time
+#Today date
 subprocess.call("date", shell=True)
-print "\n"
-#Check Kernel version
-un = "uname"
-un_arg = "-a"
-print "Gathering system information with %s command:\n" % un
-subprocess.call([un, un_arg])
-print "\n"
-#check for current disk space
-dsk = "df"
-dsk_arg = "-h"
-print "Gathering diskspace information %s command:\n" % dsk
-subprocess.call([dsk, dsk_arg])
-print "\n"
-subprocess.call("hostname", shell=True)
-subprocess.call("free -m", shell=True)
+def uname_func():
+	uname = "uname"
+	u_arg = "-a"
+	print "Gathering system information with %s command:\n" % uname
+	subprocess.call([uname,u_arg])
+
+def disk_func():
+	diskspace = "df"
+	diskspace_arg = "-h"
+	print "Gathering system information with %s command:\n" % diskspace
+	subprocess.call([diskspace, diskspace_arg])
+
+def main():
+	uname_func()
+	disk_func()
+main()
