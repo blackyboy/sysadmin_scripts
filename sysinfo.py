@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 #A System Information Gathering Script
+#Global character Support
+# -*- coding: utf-8 -*-
 import subprocess
 #Today date
 subprocess.call("date", shell=True)
@@ -29,4 +31,5 @@ def main():
 	uname_func()
 	disk_func()
 	host_ip()
-main()
+if __name__ == "__main__":
+ main()
